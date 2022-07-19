@@ -4,13 +4,13 @@ using Xunit;
 
 namespace UnitTesting
 {
-    public class Class1
+    public class Calculator
     {
         [Fact]
         public void AddShouldCalculate()
         {
             // Arrange
-            var calculator = new Calculator();
+            var calculator = new Calculators.Calculator();
             float number1 = 2.6f;
             float number2 = 2.6f;
             float expected = 5.2f;
@@ -26,7 +26,7 @@ namespace UnitTesting
         public void SubShouldCalculate()
         {
             // Arrange
-            var calculator = new Calculator();
+            var calculator = new Calculators.Calculator();
             float number1 = 10.0f;
             float number2 = 5.5f;
             float expected = 4.5f;
@@ -46,7 +46,7 @@ namespace UnitTesting
         public void MulShouldCalculate(float number1, float number2, float expected)
         {
             // Arrange
-            var calculadora = new Calculator();
+            var calculadora = new Calculators.Calculator();
             // Act
             float actual = calculadora.Mul(number1, number2);
 
@@ -62,7 +62,7 @@ namespace UnitTesting
         public void DivShouldCalculate(float number1, float number2, float expected)
         {
             // Arrange
-            var calculadora = new Calculator();
+            var calculadora = new Calculators.Calculator();
 
             // Act
             float actual = calculadora.Div(number1, number2);
