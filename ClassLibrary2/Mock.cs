@@ -13,10 +13,10 @@ namespace UnitTesting
         {
             // Arrange
             int number = 5;
-            int expected = 130;
+            int expected = 120;
             Mock<ICalculator> calculator = new Mock<ICalculator>();
 
-            calculator.Setup(c => c.Mul(It.IsAny<int>(), It.IsAny<int>())).Returns(expected);
+            calculator.Setup(c => c.Mul(It.IsAny<int>(), It.IsAny<int>())).Returns((int number1, int number2) => number1 * number2);
             Series series = new Series(calculator.Object);
 
             // Act
@@ -33,7 +33,7 @@ namespace UnitTesting
             int number = 10;
             int expected = 55;
             Mock<ICalculator> calculator = new Mock<ICalculator>();
-            calculator.Setup(c => c.Add(It.IsAny<int>(), It.IsAny<int>())).Returns(expected);
+            calculator.Setup(c => c.Add(It.IsAny<int>(), It.IsAny<int>())).Returns((int number1, int number2) => number1+number2);
             Series series = new Series(calculator.Object);
 
             // Act
